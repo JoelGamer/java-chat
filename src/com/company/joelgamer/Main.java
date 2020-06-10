@@ -1,8 +1,8 @@
 package com.company.joelgamer;
 
 import com.company.joelgamer.Core.Core;
-import com.company.joelgamer.NetworkComponents.old.Client;
-import com.company.joelgamer.NetworkComponents.old.Server;
+import com.company.joelgamer.NetworkComponents.Client.Client;
+import com.company.joelgamer.NetworkComponents.Server.Server;
 import java.io.IOException;
 
 public class Main {
@@ -11,9 +11,9 @@ public class Main {
         Core core = new Core("src/Resources/core.properties");
 
         if(buildForServer(args)) {
-            new Server(core).run();
+            new Server(core).start();
         } else {
-            new Client(core).create().run();
+            new Client(core).start();
         }
     }
 
